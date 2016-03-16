@@ -30,14 +30,14 @@ Suggested steps to completing this assignment:
 //3. Go to line 25 and write the `setBombs()` function. It should generate a random `row` and `col`umn number. Use the `contains()` function to check to see if  `buttons[row][col]` is already in `bombs`. If it isn't then `add` it
 //3. Uncomment lines 97 and 98 so that cells with a mine turn red when clicked. Test out your program to make sure it has the number of mines you expect.
 3. Now go to the `MSButton` class and finish these three member methods:  
-	* `public boolean isValid(int row, int col)` returns `true` if (`row`,`col`) is a valid location on the grid and `false` otherwise
-	* `public int countBombs(int row, int col)` counts the bombs in the 8 neighbors--(remember to check to see if the neighboring button is valid before checking to see if it's a mine)
+	//* `public boolean isValid(int row, int col)` returns `true` if (`row`,`col`) is a valid location on the grid and `false` otherwise
+	//* `public int countBombs(int row, int col)` counts the bombs in the 8 neighbors--(remember to check to see if the neighboring button is valid before checking to see if it's a mine)
 	* `public void mousePressed()` which:
-		* sets `click` to true
-		* if `keyPressed` is `true`, toggles `marked` to either either `true` or `false`
-		* else if `bombs` contains `this` button display the losing message
-		* else if `countBombs` returns a number of neighboring mines greater than zero, set the label to that number
-		* else recursively call `mousePressed` with the valid, unclicked, neighboring buttons 
+		//* sets `click` to true
+		//* if `keyPressed` is `true`, toggles `marked` to either either `true` or `false`
+		//* else if `bombs` contains `this` button display the losing message
+		//* else if `countBombs` returns a number of neighboring mines greater than zero, set the label to that number
+		//* else recursively call `mousePressed` with the valid, unclicked, neighboring buttons 
 4. Next, finish `public boolean isWon()` which determines if the player has won the game
 5. Then finish `public void displayWinMessage()` which uses `setLabel` to change the labels of the buttons to display a winning message
 6. Finally finish `public void displayLosingMessage()` to display the positions of all the bombs as well as a losing message
