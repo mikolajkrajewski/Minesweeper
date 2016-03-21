@@ -93,9 +93,9 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        if(mouseButton == RIGHT)
+        if(mousePressed == true && mouseButton == RIGHT)
         {
-            marked != marked;
+            marked = !marked;
         }
         else if(bombs.contains(this))
         {
@@ -103,7 +103,7 @@ public class MSButton
         }
         else if(countBombs(r,c)>0)
         {
-            setLabel("" + (countBombs()));
+            setLabel("" + (countBombs(r,c)));
         }
         else
         {
