@@ -48,8 +48,17 @@ public void draw ()
 }
 public boolean isWon()
 {
-    //your code here
-    return false;
+    for(int r=0; r<NUM_ROWS; r++)
+    {
+        for(int c=0; c<NUM_COLS; c++)
+        {
+            if(buttons[r][c].isMarked() == false && buttons[r][c].isClicked() == false)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 public void displayLosingMessage()
 {
@@ -61,11 +70,11 @@ public void displayLosingMessage()
                 buttons[r][c].setLabel("B");
         }
     }
-    String message = new String("GameOver!");
+    String message = new String("GAME OVER!");
     for(int i=0; i<message.length(); i++)
     {
         buttons[9][i+5].clicked = true;
-        if(bombs.contains(buttons[9][i+5] == false))
+        if(bombs.contains(buttons[9][i+5]) == false)
         {
             bombs.add(buttons[9][i+5]);
         }
@@ -74,7 +83,16 @@ public void displayLosingMessage()
 }
 public void displayWinningMessage()
 {
-    //your code here
+    String message = new String("YOU WIN!");
+    for(int i=0; i<message.length(); i++)
+    {
+        buttons[9][i+6].clicked = true;
+        if(bombs.contains(buttons[9][i+6]) == false)
+        {
+            bombs.add(buttons[9][i+6]);
+        }
+        buttons[9][i+6].setLabel(message.substring(i,i+1));
+    }
 }
 
 public class MSButton
